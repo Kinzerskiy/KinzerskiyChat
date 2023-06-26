@@ -2,31 +2,31 @@
     {
         "username": "Bob River",
         "userImageString": "human1",
-        "lastMessage": "How are you?",
+        "lastMessage": "Who is it?",
         "id": 1
     },
     {
         "username": "John Black",
         "userImageString": "human2",
-        "lastMessage": "Where are you?",
+        "lastMessage": "Do you think this is a lobster?",
         "id": 2
     },
     {
         "username": "Misha Red",
         "userImageString": "human3",
-        "lastMessage": "Who are you?",
+        "lastMessage": "No I dont think so",
         "id": 3
     },
     {
         "username": "Alex Film",
         "userImageString": "human4",
-        "lastMessage": "How old are you?",
+        "lastMessage": "What do you think, Robert Martin?",
         "id": 4
     },
     {
         "username": "Robert Martin",
         "userImageString": "human5",
-        "lastMessage": "Where are we?",
+        "lastMessage": "Its my mother-in-law",
         "id": 5
     }
 ]

@@ -22,7 +22,6 @@ struct KChat: Hashable, Decodable {
     static func == (lhs: KChat, rhs: KChat) -> Bool {
         return lhs.id == rhs.id
     }
-    
 }
 
 class ListViewController: UIViewController {
@@ -32,7 +31,7 @@ class ListViewController: UIViewController {
     let waitingChats = Bundle.main.decode([KChat].self, from: "waitingChats.json")
     
     enum Section: Int, CaseIterable {
-        case waitingChats, activeChats 
+        case waitingChats, activeChats
     }
     var dataSource: UICollectionViewDiffableDataSource<Section, KChat>?
     var collectionView: UICollectionView!
@@ -65,32 +64,11 @@ class ListViewController: UIViewController {
         collectionView.backgroundColor = .mainWhite()
         view.addSubview(collectionView)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellid")
+       
+        collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reusedId)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellid2")
       
     }
-    
-    private func setupDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, KChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, itemIdentifier) -> UICollectionViewCell? in
-            guard let section = Section(rawValue: indexPath.section) else {
-                fatalError("Unknown section kind")
-            }
-                
-                switch section {
-                case .activeChats:
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
-                    cell.backgroundColor = .systemBlue
-                    return cell
-                    
-                case .waitingChats:
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid2", for: indexPath)
-                    cell.backgroundColor = .systemRed
-                    return cell
-                }
-            })
-    }
-    
-    
     private func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, KChat>()
         snapshot.appendSections([.waitingChats, .activeChats])
@@ -100,11 +78,40 @@ class ListViewController: UIViewController {
        
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
+}
+
+//MARK: DataSource
+extension ListViewController {
+    private func setupDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, KChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
+            guard let section = Section(rawValue: indexPath.section) else {
+                fatalError("Unknown section kind")
+            }
+                
+                switch section {
+                case .activeChats:
+                    return self.configure(cellType: ActiveChatCell.self, with: chat, for: indexPath)
+                    
+                case .waitingChats:
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid2", for: indexPath)
+                    cell.backgroundColor = .systemRed
+                    return cell
+                }
+            })
+    }
     
+    private func configure<T: SelfConfiguringCell>(cellType: T.Type, with value: KChat, for indexPath: IndexPath) -> T {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reusedId, for: indexPath) as? T else {
+                fatalError("Unable to dequeue \(cellType)")
+            }
+            cell.configure(with: value)
+            return cell
+        }
 }
 
 //MARK: Setup Collection Layout
 extension ListViewController {
+    
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
             
