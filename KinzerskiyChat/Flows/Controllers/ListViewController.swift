@@ -32,6 +32,16 @@ class ListViewController: UIViewController {
     
     enum Section: Int, CaseIterable {
         case waitingChats, activeChats
+        
+        func description() -> String {
+            switch self {
+                
+            case .waitingChats:
+                return "Waiting chats"
+            case .activeChats:
+                return "Active chats"
+            }
+        }
     }
     var dataSource: UICollectionViewDiffableDataSource<Section, KChat>?
     var collectionView: UICollectionView!
@@ -63,11 +73,11 @@ class ListViewController: UIViewController {
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .mainWhite()
         view.addSubview(collectionView)
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reusedId)
         
-       
         collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reusedId)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellid2")
-      
+        collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reusedId)
+        
     }
     private func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, KChat>()
@@ -75,38 +85,52 @@ class ListViewController: UIViewController {
         
         snapshot.appendItems(waitingChats, toSection: .waitingChats)
         snapshot.appendItems(activeChats, toSection: .activeChats)
-       
+        
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
 }
 
 //MARK: DataSource
 extension ListViewController {
+    
+    
+    private func configure<T: SelfConfiguringCell>(cellType: T.Type, with value: KChat, for indexPath: IndexPath) -> T {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reusedId, for: indexPath) as? T else {
+            fatalError("Unable to dequeue \(cellType)")
+        }
+        cell.configure(with: value)
+        return cell
+    }
+    
+    
     private func setupDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, KChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
             guard let section = Section(rawValue: indexPath.section) else {
                 fatalError("Unknown section kind")
             }
+            
+            switch section {
+            case .activeChats:
+                return self.configure(cellType: ActiveChatCell.self, with: chat, for: indexPath)
                 
-                switch section {
-                case .activeChats:
-                    return self.configure(cellType: ActiveChatCell.self, with: chat, for: indexPath)
-                    
-                case .waitingChats:
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid2", for: indexPath)
-                    cell.backgroundColor = .systemRed
-                    return cell
-                }
-            })
-    }
-    
-    private func configure<T: SelfConfiguringCell>(cellType: T.Type, with value: KChat, for indexPath: IndexPath) -> T {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reusedId, for: indexPath) as? T else {
-                fatalError("Unable to dequeue \(cellType)")
+            case .waitingChats:
+                return self.configure(cellType: WaitingChatCell.self, with: chat, for: indexPath)
             }
-            cell.configure(with: value)
-            return cell
+        })
+        
+        dataSource?.supplementaryViewProvider = {
+            collectionView, kind, indexPath in
+            
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reusedId, for: indexPath) as? SectionHeader else { fatalError("Can not create new section header")}
+            guard let section = Section(rawValue: indexPath.section) else {
+                fatalError("Unknown section kind") }
+            sectionHeader.configure(text: section.description(),
+                                    font: .loaSangamMN20(),
+                                    textColor: .darkGray)
+            
+            return sectionHeader
         }
+    }
 }
 
 //MARK: Setup Collection Layout
@@ -126,6 +150,9 @@ extension ListViewController {
                 return self.createWaitingChats()
             }
         }
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 20
+        layout.configuration = config
         return layout
     }
     
@@ -145,10 +172,14 @@ extension ListViewController {
         section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
         
         section.orthogonalScrollingBehavior = .continuous
+        
+        let sectionHeader = createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
         return section
     }
     
-     private func createActiveChats() -> NSCollectionLayoutSection {
+    
+    private func createActiveChats() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                               heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -159,9 +190,24 @@ extension ListViewController {
         
         
         let section = NSCollectionLayoutSection(group: group)
-         section.interGroupSpacing = 8
+        section.interGroupSpacing = 8
         section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
+        
+        let sectionHeader = createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
         return section
+    }
+    
+    private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let sectionHeaderSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(1))
+        
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: sectionHeaderSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top)
+        return sectionHeader
     }
 }
 

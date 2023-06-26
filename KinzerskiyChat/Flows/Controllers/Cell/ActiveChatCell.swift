@@ -7,19 +7,16 @@
 
 import UIKit
 
-protocol SelfConfiguringCell {
-    static var reusedId: String { get }
-    func configure(with value: KChat)
-}
 
 class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
     static var reusedId: String = "ActiveChatCell"
     
     
     let friendImageView = UIImageView()
-    let gradientView = UIView()
+    let gradientView = GradientView(from: .topTrailing, to: .bottomLeading, startColor: #colorLiteral(red: 1, green: 0, blue: 0.7254901961, alpha: 1), endColor: #colorLiteral(red: 0.5120286909, green: 0.8059033403, blue: 1, alpha: 1))
     let friendName = UILabel(text: "User name", font: .loaSangamMN20())
     let lastMessage = UILabel(text: "How are you", font: .loaSangamMN18())
+    
    
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -80,7 +77,7 @@ extension ActiveChatCell {
             gradientView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             
             gradientView.heightAnchor.constraint(equalToConstant: 78),
-            gradientView.widthAnchor.constraint(equalToConstant: 8)
+            gradientView.widthAnchor.constraint(equalToConstant: 28)
         
         ])
         

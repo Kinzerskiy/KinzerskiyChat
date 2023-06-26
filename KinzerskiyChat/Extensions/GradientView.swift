@@ -90,5 +90,4 @@ class GradientView: UIView {
         self.setupGradient(from: .leading, to: .trailing, startColor: startColor, endColor: endColor)
     }
     
-    
 }

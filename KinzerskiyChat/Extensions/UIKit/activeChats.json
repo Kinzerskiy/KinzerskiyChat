@@ -1,32 +1,32 @@
 [
     {
-        "username": "Bob River",
+        "username": "Ровер444",
         "userImageString": "human1",
-        "lastMessage": "Who is it?",
+        "lastMessage": "Микола, це хто?",
         "id": 1
     },
     {
-        "username": "John Black",
+        "username": "Микола Гусейн",
         "userImageString": "human2",
-        "lastMessage": "Do you think this is a lobster?",
+        "lastMessage": "я думаю, що це крівєтка!",
         "id": 2
     },
     {
-        "username": "Misha Red",
+        "username": "Миша Катушка",
         "userImageString": "human3",
-        "lastMessage": "No I dont think so",
+        "lastMessage": "Та нє ти шо гоніш",
         "id": 3
     },
     {
-        "username": "Alex Film",
+        "username": "Льоха Цвях",
         "userImageString": "human4",
-        "lastMessage": "What do you think, Robert Martin?",
+        "lastMessage": "а ти шо думаєш Вася?",
         "id": 4
     },
     {
-        "username": "Robert Martin",
+        "username": "Василій 666",
         "userImageString": "human5",
-        "lastMessage": "Its my mother-in-law",
+        "lastMessage": "Та це ж моя теща",
         "id": 5
     }
 ]
