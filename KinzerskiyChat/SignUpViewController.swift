@@ -54,7 +54,7 @@ extension SignUpViewController {
         loginButton.contentHorizontalAlignment = .leading
         let bottomStackView = UIStackView(arrangedSubviews: [alreadyOnBoardLabel, loginButton],
                                           axis: .horizontal,
-                                          spacing: 0)
+                                          spacing: 10)
         bottomStackView.alignment = .firstBaseline
         
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false

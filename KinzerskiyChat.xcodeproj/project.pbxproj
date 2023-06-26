@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8E0CABDB2A498BC90065FE66 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0CABDA2A498BC90065FE66 /* SignUpViewController.swift */; };
 		8E0CABDD2A498E320065FE66 /* OneLineTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0CABDC2A498E320065FE66 /* OneLineTextfield.swift */; };
+		8E38DEDD2A49B72900001573 /* SetUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E38DEDC2A49B72900001573 /* SetUpProfileViewController.swift */; };
+		8E5DCBEF2A49BD4C00F16366 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5DCBEE2A49BD4C00F16366 /* AddPhotoView.swift */; };
 		8EA1135F2A470A5700BC5237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1135E2A470A5700BC5237 /* AppDelegate.swift */; };
 		8EA113612A470A5700BC5237 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA113602A470A5700BC5237 /* SceneDelegate.swift */; };
 		8EA113632A470A5700BC5237 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA113622A470A5700BC5237 /* AuthViewController.swift */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		8E0CABDA2A498BC90065FE66 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8E0CABDC2A498E320065FE66 /* OneLineTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextfield.swift; sourceTree = "<group>"; };
+		8E38DEDC2A49B72900001573 /* SetUpProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpProfileViewController.swift; sourceTree = "<group>"; };
+		8E5DCBEE2A49BD4C00F16366 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		8EA1135B2A470A5700BC5237 /* KinzerskiyChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinzerskiyChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA1135E2A470A5700BC5237 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EA113602A470A5700BC5237 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 				8EA113622A470A5700BC5237 /* AuthViewController.swift */,
 				8E0CABDA2A498BC90065FE66 /* SignUpViewController.swift */,
 				8EA2F3BC2A49A357006ACB80 /* LoginViewController.swift */,
+				8E38DEDC2A49B72900001573 /* SetUpProfileViewController.swift */,
 				8EA1137D2A47233F00BC5237 /* Extensions */,
 				8EA113672A470A5B00BC5237 /* Assets.xcassets */,
 				8EA113692A470A5B00BC5237 /* LaunchScreen.storyboard */,
@@ -104,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				8EA1137E2A47257400BC5237 /* ButtonFormView.swift */,
+				8E5DCBEE2A49BD4C00F16366 /* AddPhotoView.swift */,
 				8E0CABDC2A498E320065FE66 /* OneLineTextfield.swift */,
 				8EA1137C2A47232C00BC5237 /* UIKit */,
 			);
@@ -182,10 +188,12 @@
 			files = (
 				8E0CABDB2A498BC90065FE66 /* SignUpViewController.swift in Sources */,
 				8EA113792A47201100BC5237 /* Label+Extension.swift in Sources */,
+				8E38DEDD2A49B72900001573 /* SetUpProfileViewController.swift in Sources */,
 				8EA113632A470A5700BC5237 /* AuthViewController.swift in Sources */,
 				8EA1137B2A4720E900BC5237 /* UIImageView+Extension.swift in Sources */,
 				8EA1137F2A47257400BC5237 /* ButtonFormView.swift in Sources */,
 				8EA113732A47195300BC5237 /* UIbutton+Extension.swift in Sources */,
+				8E5DCBEF2A49BD4C00F16366 /* AddPhotoView.swift in Sources */,
 				8EA1135F2A470A5700BC5237 /* AppDelegate.swift in Sources */,
 				8EA113772A471C3D00BC5237 /* UIColor+Extension.swift in Sources */,
 				8E0CABDD2A498E320065FE66 /* OneLineTextfield.swift in Sources */,

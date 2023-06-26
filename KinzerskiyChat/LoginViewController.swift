@@ -32,13 +32,15 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        googleButton.customizedGoogleButton()
         view.backgroundColor = .white
         setupConstraints()
     }
     
 }
 
-
+//MARK: Setup constraints
 extension LoginViewController {
     
     private func setupConstraints() {
