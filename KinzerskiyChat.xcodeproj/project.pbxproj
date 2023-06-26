@@ -14,6 +14,7 @@
 		8E5B074B2A4A06A600DAF07B /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E5B074A2A4A06A600DAF07B /* activeChats.json */; };
 		8E5B074D2A4A06F400DAF07B /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5B074C2A4A06F400DAF07B /* Bundle-Decodable.swift */; };
 		8E5B07502A4A14A000DAF07B /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5B074F2A4A14A000DAF07B /* ActiveChatCell.swift */; };
+		8E5B07522A4A25D600DAF07B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5B07512A4A25D600DAF07B /* GradientView.swift */; };
 		8E5DCBEF2A49BD4C00F16366 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5DCBEE2A49BD4C00F16366 /* AddPhotoView.swift */; };
 		8E5DCBF12A49CB5900F16366 /* SegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5DCBF02A49CB5900F16366 /* SegmentedControl+Extension.swift */; };
 		8E6FC4912A49D6CD00AA1012 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6FC4902A49D6CD00AA1012 /* ListViewController.swift */; };
@@ -42,6 +43,7 @@
 		8E5B074A2A4A06A600DAF07B /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		8E5B074C2A4A06F400DAF07B /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		8E5B074F2A4A14A000DAF07B /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
+		8E5B07512A4A25D600DAF07B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		8E5DCBEE2A49BD4C00F16366 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		8E5DCBF02A49CB5900F16366 /* SegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedControl+Extension.swift"; sourceTree = "<group>"; };
 		8E6FC4902A49D6CD00AA1012 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				8E0CABDC2A498E320065FE66 /* OneLineTextfield.swift */,
 				8E5B074C2A4A06F400DAF07B /* Bundle-Decodable.swift */,
 				8E5DCBF02A49CB5900F16366 /* SegmentedControl+Extension.swift */,
+				8E5B07512A4A25D600DAF07B /* GradientView.swift */,
 				8EA1137C2A47232C00BC5237 /* UIKit */,
 			);
 			path = Extensions;
@@ -246,6 +249,7 @@
 			files = (
 				8E6FC4912A49D6CD00AA1012 /* ListViewController.swift in Sources */,
 				8E5DCBF12A49CB5900F16366 /* SegmentedControl+Extension.swift in Sources */,
+				8E5B07522A4A25D600DAF07B /* GradientView.swift in Sources */,
 				8E6FC4932A49D77A00AA1012 /* MainTabBarController.swift in Sources */,
 				8E0CABDB2A498BC90065FE66 /* SignUpViewController.swift in Sources */,
 				8E5B07502A4A14A000DAF07B /* ActiveChatCell.swift in Sources */,
