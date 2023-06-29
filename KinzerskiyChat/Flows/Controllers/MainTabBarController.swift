@@ -13,8 +13,8 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        let listViewController = ListViewController()
         let peopleViewController = PeopleViewController()
+        let listViewController = ListViewController()
         tabBar.tintColor = #colorLiteral(red: 0.5568627451, green: 0.3529411765, blue: 0.968627451, alpha: 1)
         
         
@@ -24,8 +24,8 @@ class MainTabBarController: UITabBarController {
        
         
          viewControllers = [
-            generateNavigationController(rootViewController: listViewController, title: "Conversation", image: convImage),
             generateNavigationController(rootViewController: peopleViewController, title: "People", image: peopleImage),
+            generateNavigationController(rootViewController: listViewController, title: "Conversation", image: convImage),
            ]
     }
     

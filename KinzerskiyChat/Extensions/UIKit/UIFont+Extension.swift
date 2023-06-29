@@ -16,11 +16,11 @@ extension UIFont {
         return UIFont.init(name: "avenir", size: 26)
     }
     
-    static func loaSangamMN20() -> UIFont? {
+    static func laoSangamMN20() -> UIFont? {
         return UIFont.init(name: "Lao Sangam MN", size: 20)
     }
     
-    static func loaSangamMN18() -> UIFont? {
+    static func laoSangamMN18() -> UIFont? {
         return UIFont.init(name: "Lao Sangam MN", size: 18)
     }
 }

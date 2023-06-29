@@ -9,13 +9,23 @@ import UIKit
 
 
 class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
+    
+    func configure<U>(with value: U) where U : Hashable {
+        if let chat = value as? KChat {
+            friendImageView.image = UIImage(named: chat.userImageString)
+            friendName.text = chat.username
+            lastMessage.text = chat.lastMessage
+        }
+    }
+    
+    
     static var reusedId: String = "ActiveChatCell"
     
     
     let friendImageView = UIImageView()
     let gradientView = GradientView(from: .topTrailing, to: .bottomLeading, startColor: #colorLiteral(red: 1, green: 0, blue: 0.7254901961, alpha: 1), endColor: #colorLiteral(red: 0.5120286909, green: 0.8059033403, blue: 1, alpha: 1))
-    let friendName = UILabel(text: "User name", font: .loaSangamMN20())
-    let lastMessage = UILabel(text: "How are you", font: .loaSangamMN18())
+    let friendName = UILabel(text: "User name", font: .laoSangamMN20())
+    let lastMessage = UILabel(text: "How are you", font: .laoSangamMN18())
     
    
     override init(frame: CGRect) {
@@ -25,13 +35,6 @@ class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
         
         self.layer.cornerRadius = 12
         self.clipsToBounds = true
-    }
-    
-    func configure(with value: KChat) {
-        friendImageView.image = UIImage(named: value.userImageString)
-        friendName.text = value.username
-        lastMessage.text = value.lastMessage
-        
     }
     
     

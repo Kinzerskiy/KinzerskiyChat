@@ -7,23 +7,6 @@
 
 import UIKit
 
-
-
-struct KChat: Hashable, Decodable {
-    var username: String
-    var userImageString: String
-    var lastMessage: String
-    var id: Int
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    static func == (lhs: KChat, rhs: KChat) -> Bool {
-        return lhs.id == rhs.id
-    }
-}
-
 class ListViewController: UIViewController {
     
     let activeChats = Bundle.main.decode([KChat].self, from: "activeChats.json")
@@ -92,15 +75,7 @@ class ListViewController: UIViewController {
 
 //MARK: DataSource
 extension ListViewController {
-    
-    
-    private func configure<T: SelfConfiguringCell>(cellType: T.Type, with value: KChat, for indexPath: IndexPath) -> T {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reusedId, for: indexPath) as? T else {
-            fatalError("Unable to dequeue \(cellType)")
-        }
-        cell.configure(with: value)
-        return cell
-    }
+  
     
     
     private func setupDataSource() {
@@ -111,10 +86,10 @@ extension ListViewController {
             
             switch section {
             case .activeChats:
-                return self.configure(cellType: ActiveChatCell.self, with: chat, for: indexPath)
-                
+                return self.configure(collectionView: collectionView, cellType: ActiveChatCell.self, with: chat, for: indexPath)
+
             case .waitingChats:
-                return self.configure(cellType: WaitingChatCell.self, with: chat, for: indexPath)
+                return  self.configure(collectionView: collectionView, cellType: WaitingChatCell.self, with: chat, for: indexPath)
             }
         })
         
@@ -125,7 +100,7 @@ extension ListViewController {
             guard let section = Section(rawValue: indexPath.section) else {
                 fatalError("Unknown section kind") }
             sectionHeader.configure(text: section.description(),
-                                    font: .loaSangamMN20(),
+                                    font: .laoSangamMN20(),
                                     textColor: .darkGray)
             
             return sectionHeader
