@@ -19,12 +19,28 @@ class AuthViewController: UIViewController {
     let loginButton = UIButton(title: "Login", titleColor: .buttonRed(), backgroundColor: .white, isShadow: true)
     let googleButton = UIButton(title: "Google", titleColor: .black, backgroundColor: .white, isShadow: true)
     
+    let signUpVC = SignUpViewController()
+    let loginVC = LoginViewController()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         googleButton.customizedGoogleButton()
         view.backgroundColor = .white
         setUpConstraints()
+        
+        emailButton.addTarget(self, action: #selector(emailButtontapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtontapped), for: .touchUpInside)
+    }
+    
+    @objc private func emailButtontapped() {
+        print("")
+        present(signUpVC, animated: true, completion: nil)
+    }
+    
+    @objc private func loginButtontapped() {
+        print("")
+        present(loginVC, animated: true, completion: nil)
     }
 }
 
@@ -46,7 +62,7 @@ extension AuthViewController {
         let logoHeight: CGFloat = 200
         let logoWidth: CGFloat = 200
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: logoHeight),
             logoImageView.widthAnchor.constraint(equalToConstant: logoWidth)

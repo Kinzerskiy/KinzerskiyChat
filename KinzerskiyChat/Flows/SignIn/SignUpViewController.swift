@@ -34,6 +34,23 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setUpConstraints()
+        signUpbutton.addTarget(self, action: #selector(signUpbuttonTapped), for: .touchUpInside)
+    }
+    
+    
+    
+    @objc private func signUpbuttonTapped() {
+        print("")
+        
+        AuthManager.shared.register(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text) { (result) in
+            switch result {
+                
+            case .success(let user):
+                self.showAlert(with: "succssess", message: "you are registred")
+            case .failure(let error):
+                self.showAlert(with: "error!", message: error.localizedDescription)
+            }
+        }
     }
 }
 
@@ -106,3 +123,11 @@ struct SignUpProvider: PreviewProvider {
     }
 }
 
+extension UIViewController {
+    func showAlert(with title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
+}

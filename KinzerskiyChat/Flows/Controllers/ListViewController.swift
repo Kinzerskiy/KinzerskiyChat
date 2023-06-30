@@ -26,6 +26,7 @@ class ListViewController: UIViewController {
             }
         }
     }
+    
     var dataSource: UICollectionViewDiffableDataSource<Section, KChat>?
     var collectionView: UICollectionView!
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		365103321269A0CB73C418B8 /* Pods_KinzerskiyChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C22E2BA31E665348B0E2394 /* Pods_KinzerskiyChat.framework */; };
 		8E0CABDB2A498BC90065FE66 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0CABDA2A498BC90065FE66 /* SignUpViewController.swift */; };
 		8E0CABDD2A498E320065FE66 /* OneLineTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0CABDC2A498E320065FE66 /* OneLineTextfield.swift */; };
 		8E1EEA6E2A4AE46E003ABC74 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EEA6D2A4AE46E003ABC74 /* UserCell.swift */; };
@@ -32,6 +33,8 @@
 		8E721A072A4DB35700E1A729 /* InsertableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E721A062A4DB35700E1A729 /* InsertableTextField.swift */; };
 		8E721A092A4DB60500E1A729 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E721A082A4DB60500E1A729 /* UIView+Extension.swift */; };
 		8E721A0B2A4DBBDE00E1A729 /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E721A0A2A4DBBDE00E1A729 /* ChatRequestViewController.swift */; };
+		8E721A0D2A4DC74900E1A729 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E721A0C2A4DC74900E1A729 /* GoogleService-Info.plist */; };
+		8E721A102A4ED5DD00E1A729 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E721A0F2A4ED5DD00E1A729 /* AuthManager.swift */; };
 		8EA1135F2A470A5700BC5237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1135E2A470A5700BC5237 /* AppDelegate.swift */; };
 		8EA113612A470A5700BC5237 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA113602A470A5700BC5237 /* SceneDelegate.swift */; };
 		8EA113632A470A5700BC5237 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA113622A470A5700BC5237 /* AuthViewController.swift */; };
@@ -48,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C22E2BA31E665348B0E2394 /* Pods_KinzerskiyChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinzerskiyChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41B79832151C604AECFBC754 /* Pods-KinzerskiyChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinzerskiyChat.debug.xcconfig"; path = "Target Support Files/Pods-KinzerskiyChat/Pods-KinzerskiyChat.debug.xcconfig"; sourceTree = "<group>"; };
 		8E0CABDA2A498BC90065FE66 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8E0CABDC2A498E320065FE66 /* OneLineTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextfield.swift; sourceTree = "<group>"; };
 		8E1EEA6D2A4AE46E003ABC74 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -73,6 +78,8 @@
 		8E721A062A4DB35700E1A729 /* InsertableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertableTextField.swift; sourceTree = "<group>"; };
 		8E721A082A4DB60500E1A729 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8E721A0A2A4DBBDE00E1A729 /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
+		8E721A0C2A4DC74900E1A729 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8E721A0F2A4ED5DD00E1A729 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		8EA1135B2A470A5700BC5237 /* KinzerskiyChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinzerskiyChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA1135E2A470A5700BC5237 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EA113602A470A5700BC5237 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +95,7 @@
 		8EA1137E2A47257400BC5237 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
 		8EA113802A472B1C00BC5237 /* StackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView+Extension.swift"; sourceTree = "<group>"; };
 		8EA2F3BC2A49A357006ACB80 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C5C835CA2A24981E5FFF4075 /* Pods-KinzerskiyChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinzerskiyChat.release.xcconfig"; path = "Target Support Files/Pods-KinzerskiyChat/Pods-KinzerskiyChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				365103321269A0CB73C418B8 /* Pods_KinzerskiyChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +193,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		8E721A0E2A4ED5C100E1A729 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8E721A0F2A4ED5DD00E1A729 /* AuthManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		8E82DCDE2A4AD22E008854F3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +215,8 @@
 			children = (
 				8EA1135D2A470A5700BC5237 /* KinzerskiyChat */,
 				8EA1135C2A470A5700BC5237 /* Products */,
+				E699DDAF76B4C5804A44E327 /* Pods */,
+				91B39148BFA946BE8E23DDC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,12 +233,14 @@
 			children = (
 				8EA1135E2A470A5700BC5237 /* AppDelegate.swift */,
 				8EA113602A470A5700BC5237 /* SceneDelegate.swift */,
+				8E721A0E2A4ED5C100E1A729 /* Managers */,
 				8E82DCDE2A4AD22E008854F3 /* Models */,
 				8E5DCBF22A49D04A00F16366 /* Flows */,
 				8E5B07572A4A352900DAF07B /* Protocols */,
 				8EA1137D2A47233F00BC5237 /* Extensions */,
 				8EA113672A470A5B00BC5237 /* Assets.xcassets */,
 				8EA113692A470A5B00BC5237 /* LaunchScreen.storyboard */,
+				8E721A0C2A4DC74900E1A729 /* GoogleService-Info.plist */,
 				8EA1136C2A470A5B00BC5237 /* Info.plist */,
 			);
 			path = KinzerskiyChat;
@@ -251,6 +272,23 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		91B39148BFA946BE8E23DDC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C22E2BA31E665348B0E2394 /* Pods_KinzerskiyChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E699DDAF76B4C5804A44E327 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41B79832151C604AECFBC754 /* Pods-KinzerskiyChat.debug.xcconfig */,
+				C5C835CA2A24981E5FFF4075 /* Pods-KinzerskiyChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,9 +296,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8EA1136F2A470A5B00BC5237 /* Build configuration list for PBXNativeTarget "KinzerskiyChat" */;
 			buildPhases = (
+				8E4E31AD89EACA97F8885C50 /* [CP] Check Pods Manifest.lock */,
 				8EA113572A470A5700BC5237 /* Sources */,
 				8EA113582A470A5700BC5237 /* Frameworks */,
 				8EA113592A470A5700BC5237 /* Resources */,
+				C671F2B09884F2E88AC764A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,10 +354,53 @@
 				8EA1136B2A470A5B00BC5237 /* LaunchScreen.storyboard in Resources */,
 				8EA113682A470A5B00BC5237 /* Assets.xcassets in Resources */,
 				8E5B074B2A4A06A600DAF07B /* activeChats.json in Resources */,
+				8E721A0D2A4DC74900E1A729 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E4E31AD89EACA97F8885C50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KinzerskiyChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C671F2B09884F2E88AC764A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KinzerskiyChat/Pods-KinzerskiyChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KinzerskiyChat/Pods-KinzerskiyChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KinzerskiyChat/Pods-KinzerskiyChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8EA113572A470A5700BC5237 /* Sources */ = {
@@ -331,6 +414,7 @@
 				8E1EEA702A4AE63D003ABC74 /* UIViewController+Extension.swift in Sources */,
 				8E6FC4932A49D77A00AA1012 /* MainTabBarController.swift in Sources */,
 				8E0CABDB2A498BC90065FE66 /* SignUpViewController.swift in Sources */,
+				8E721A102A4ED5DD00E1A729 /* AuthManager.swift in Sources */,
 				8E5B07502A4A14A000DAF07B /* ActiveChatCell.swift in Sources */,
 				8EA113792A47201100BC5237 /* Label+Extension.swift in Sources */,
 				8E6FC4952A49D7B600AA1012 /* PeopleViewController.swift in Sources */,
@@ -490,6 +574,7 @@
 		};
 		8EA113702A470A5B00BC5237 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41B79832151C604AECFBC754 /* Pods-KinzerskiyChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -517,6 +602,7 @@
 		};
 		8EA113712A470A5B00BC5237 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5C835CA2A24981E5FFF4075 /* Pods-KinzerskiyChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
