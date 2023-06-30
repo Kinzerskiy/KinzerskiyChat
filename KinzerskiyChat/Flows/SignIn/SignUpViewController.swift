@@ -30,26 +30,39 @@ class SignUpViewController: UIViewController {
         return button
     }()
     
+    weak var delegate: AuthNavigationDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setUpConstraints()
         signUpbutton.addTarget(self, action: #selector(signUpbuttonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginpButtonTapped), for: .touchUpInside)
+
     }
     
     
     
     @objc private func signUpbuttonTapped() {
-        print("")
         
         AuthManager.shared.register(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text) { (result) in
             switch result {
                 
             case .success(let user):
-                self.showAlert(with: "succssess", message: "you are registred")
+               
+                self.showAlert(with: "Succssess!", message: "You are registred") {
+                    self.present(SetUpProfileViewController(), animated: true, completion: nil)
+                }
+                
             case .failure(let error):
                 self.showAlert(with: "error!", message: error.localizedDescription)
             }
+        }
+    }
+    
+    @objc private func loginpButtonTapped() {
+        self.dismiss(animated: true) {
+            self.delegate?.toLoginVC()
         }
     }
 }
@@ -124,9 +137,12 @@ struct SignUpProvider: PreviewProvider {
 }
 
 extension UIViewController {
-    func showAlert(with title: String, message: String) {
+    func showAlert(with title: String, message: String, completion: @escaping ()  -> Void = { } ) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+            completion()
+        }
         alertController.addAction(okAction)
         present(alertController, animated: true)
     }

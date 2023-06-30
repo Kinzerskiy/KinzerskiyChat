@@ -31,6 +31,9 @@ class AuthViewController: UIViewController {
         
         emailButton.addTarget(self, action: #selector(emailButtontapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtontapped), for: .touchUpInside)
+        
+        signUpVC.delegate = self
+        loginVC.delegate = self
     }
     
     @objc private func emailButtontapped() {
@@ -76,6 +79,17 @@ extension AuthViewController {
     }
 }
 
+extension AuthViewController: AuthNavigationDelegate {
+    func toLoginVC() {
+        present(loginVC, animated: true, completion: nil)
+    }
+    
+    func toSignUpVC() {
+        present(signUpVC, animated: true, completion: nil)
+    }
+    
+    
+}
 
 //MARK: SwiftUI
 import SwiftUI
