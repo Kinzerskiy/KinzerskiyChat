@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class LoginViewController: UIViewController {
     
     
@@ -65,7 +63,6 @@ class LoginViewController: UIViewController {
             self.delegate?.toSignUpVC()
         }
     }
-    
 }
 
 //MARK: Setup constraints

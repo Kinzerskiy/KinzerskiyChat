@@ -10,8 +10,21 @@ import Foundation
 
 struct KUser: Hashable, Decodable {
     var username: String
+    var email: String
+    var description: String
+    var sex: String
     var avatarStringURL: String
-    var id: Int
+    var id: String
+    
+    var representation: [String: Any] {
+        var rep = ["username": username]
+        rep["sex"] = sex
+        rep["email"] = email
+        rep["description"] = description
+        rep["avatarStringURL"] = avatarStringURL
+        rep["uid"] = id
+        return rep
+    }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)

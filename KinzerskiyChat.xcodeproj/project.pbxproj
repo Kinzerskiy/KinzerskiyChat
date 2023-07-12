@@ -35,6 +35,8 @@
 		8E721A0B2A4DBBDE00E1A729 /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E721A0A2A4DBBDE00E1A729 /* ChatRequestViewController.swift */; };
 		8E721A0D2A4DC74900E1A729 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E721A0C2A4DC74900E1A729 /* GoogleService-Info.plist */; };
 		8E721A102A4ED5DD00E1A729 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E721A0F2A4ED5DD00E1A729 /* AuthManager.swift */; };
+		8E7884862A5EB45500BEDEDB /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7884852A5EB45500BEDEDB /* FirestoreManager.swift */; };
+		8E7884882A5EBCB200BEDEDB /* UserErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7884872A5EBCB200BEDEDB /* UserErrors.swift */; };
 		8E7EA9242A4EECEA001EE376 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7EA9232A4EECEA001EE376 /* Validators.swift */; };
 		8E7EA9262A4EEF58001EE376 /* AuthErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7EA9252A4EEF58001EE376 /* AuthErrors.swift */; };
 		8E7EA9292A4F1E1A001EE376 /* AuthNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7EA9282A4F1E1A001EE376 /* AuthNavigationDelegate.swift */; };
@@ -83,6 +85,8 @@
 		8E721A0A2A4DBBDE00E1A729 /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 		8E721A0C2A4DC74900E1A729 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8E721A0F2A4ED5DD00E1A729 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		8E7884852A5EB45500BEDEDB /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		8E7884872A5EBCB200BEDEDB /* UserErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserErrors.swift; sourceTree = "<group>"; };
 		8E7EA9232A4EECEA001EE376 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		8E7EA9252A4EEF58001EE376 /* AuthErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrors.swift; sourceTree = "<group>"; };
 		8E7EA9282A4F1E1A001EE376 /* AuthNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				8E721A0F2A4ED5DD00E1A729 /* AuthManager.swift */,
+				8E7884852A5EB45500BEDEDB /* FirestoreManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 			children = (
 				8E7EA9232A4EECEA001EE376 /* Validators.swift */,
 				8E7EA9252A4EEF58001EE376 /* AuthErrors.swift */,
+				8E7884872A5EBCB200BEDEDB /* UserErrors.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -437,6 +443,7 @@
 				8EA113792A47201100BC5237 /* Label+Extension.swift in Sources */,
 				8E6FC4952A49D7B600AA1012 /* PeopleViewController.swift in Sources */,
 				8E7EA9292A4F1E1A001EE376 /* AuthNavigationDelegate.swift in Sources */,
+				8E7884882A5EBCB200BEDEDB /* UserErrors.swift in Sources */,
 				8E721A072A4DB35700E1A729 /* InsertableTextField.swift in Sources */,
 				8E38DEDD2A49B72900001573 /* SetUpProfileViewController.swift in Sources */,
 				8E5B075E2A4AD00100DAF07B /* KUser.swift in Sources */,
@@ -451,6 +458,7 @@
 				8E5DCBEF2A49BD4C00F16366 /* AddPhotoView.swift in Sources */,
 				8EA1135F2A470A5700BC5237 /* AppDelegate.swift in Sources */,
 				8E5B07562A4A350C00DAF07B /* SelfConfigurationCell.swift in Sources */,
+				8E7884862A5EB45500BEDEDB /* FirestoreManager.swift in Sources */,
 				8EA113772A471C3D00BC5237 /* UIColor+Extension.swift in Sources */,
 				8E1EEA6E2A4AE46E003ABC74 /* UserCell.swift in Sources */,
 				8E5B07542A4A2FAF00DAF07B /* WaitingChatCell.swift in Sources */,
